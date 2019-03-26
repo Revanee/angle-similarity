@@ -25,12 +25,18 @@ namespace AngleSimilarity {
       return _getComponentY(alpha) * _getComponentY(beta);
     }
 
-    float getWeightedValue(float alpha, float beta, float value)
+    float getSimilarity(float alpha, float beta)
     {
       float ratioX = _getAngleRatioX(alpha, beta);
       float ratioY = _getAngleRatioY(alpha, beta);
-      float ratio = ratioX + ratioY;
-      return ((ratio * value) + value) / 2;
+      float ratio = ratioX + ratioY; // Ratio is between 1 and -1
+      return (ratio + 1) / 2; // Return a value between 0 and 1
+    }
+
+    float getWeightedValue(float alpha, float beta, float value)
+    {
+      float similarity = getSimilarity(alpha, beta);
+      return similarity * value;
     }
 };
 
