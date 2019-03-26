@@ -1,9 +1,9 @@
-#ifndef AngleWeightedValue_h
-#define AngleWeightedValue_h
+#ifndef AngleSimilarity_h
+#define AngleSimilarity_h
 
 #include <math.h>
 
-namespace AngleWeightedValue {
+namespace AngleSimilarity {
 
     float _getComponentX(float alpha)
     {
